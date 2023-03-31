@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const SpeechRecognitionContext = React.createContext<{
+export const SpeechRecognitionContext = React.createContext<{
   SpeechRecognition: any;
   recognition: any;
   language: string;

@@ -1,0 +1,36 @@
+.play-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-image: linear-gradient(to bottom right, #163bd3, #3c5cfd);
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding-left: 2px;
+  margin: 14px 0 20px 0;
+}
+
+.vertical-lines {
+  display: flex;
+}
+
+.line {
+  width: 6px;
+  height: 26px;
+  background-color: #26252a;
+  border-radius: 4px;
+}
+
+.line:first-child {
+  margin-right: 5px;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-top: solid 10px transparent;
+  border-bottom: solid 10px transparent;
+  border-left: solid 15px #26252a;
+}

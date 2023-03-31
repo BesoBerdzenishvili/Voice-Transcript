@@ -1,4 +1,5 @@
-import { useSpeechRecognition } from "../contexts/LangContext";
+import { useSpeechRecognition } from "../../contexts/LangContext";
+import "./LanguageSwitch.css";
 
 const LanguageSwitch = () => {
   const { language, setLanguage } = useSpeechRecognition();
