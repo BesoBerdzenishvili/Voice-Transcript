@@ -3,13 +3,11 @@ export const lang = (language: string) => {
     ? {
         copy: "ასლი",
         title: "ტრანსკრიპტი",
-        startInstruction: "დააჭირეთ ღილაკს საუბრის ჩასაწერად",
-        recordInstruction: "ისაუბრეთ ტრანსკრიფციის ჩასაწერად",
+        instruction: "დააჭირეთ ღილაკს და ილაპარაკეთ საუბრის ჩასაწერად",
       }
     : {
         copy: "copy",
         title: "Transcript",
-        startInstruction: "Hit play to transcript you're speech",
-        recordInstruction: "Speack to record your transcript",
+        instruction: "Hit play and speak to transcript your voice",
       };
 };

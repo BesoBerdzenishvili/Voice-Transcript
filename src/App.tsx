@@ -1,16 +1,18 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import PlayBtn from "./components/PlayBtn/PlayBtn";
 import { SpeechRecognitionContext } from "./contexts/LangContext";
 import { lang } from "./utils/Lang";
 import LanguageSwitch from "./components/LanguageSwitch/LanguageSwitch";
 
 function App() {
-  const [isRecording, setIsRecording] = useState(false);
-  const [recordedText, setRecordedText] = useState("");
-
   const { recognition, language } = useContext(SpeechRecognitionContext);
-
   const languageText = lang(language);
+  const [isRecording, setIsRecording] = useState(false);
+  const [recordedText, setRecordedText] = useState(languageText.instruction);
+
+  useEffect(() => {
+    setRecordedText(lang(language).instruction);
+  }, [language]);
 
   const handleStartRecording = () => {
     setIsRecording(true);
