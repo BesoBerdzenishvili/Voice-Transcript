@@ -3,11 +3,13 @@ import PlayBtn from "./components/PlayBtn/PlayBtn";
 import { SpeechRecognitionContext } from "./contexts/LangContext";
 import { lang } from "./utils/Lang";
 import LanguageSwitch from "./components/LanguageSwitch/LanguageSwitch";
+import FontSize from "./components/FontSize/FontSize";
 
 function App() {
   const { recognition, language } = useContext(SpeechRecognitionContext);
   const languageText = lang(language);
   const [isRecording, setIsRecording] = useState(false);
+  const [fontSize, setFontSize] = useState(16);
   const [recordedText, setRecordedText] = useState(languageText.instruction);
 
   useEffect(() => {
@@ -39,7 +41,10 @@ function App() {
   return (
     <>
       <h1>{languageText.title}</h1>
-      <LanguageSwitch />
+      <div className="controllers">
+        <FontSize size={fontSize} setSize={setFontSize} />
+        <LanguageSwitch />
+      </div>
       <main>
         <PlayBtn
           startPlay={handleStartRecording}
@@ -47,7 +52,7 @@ function App() {
           isPlaying={isRecording}
         />
         <div className="transcript-board">
-          <p>{recordedText}</p>
+          <p style={{ fontSize: fontSize }}>{recordedText}</p>
         </div>
       </main>
     </>

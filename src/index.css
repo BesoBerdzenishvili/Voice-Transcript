@@ -12,6 +12,13 @@ h1 {
   text-align: center;
   color: #ffffff;
 }
+.controllers {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+}
 main {
   color: #c2baba;
   background-color: #26252a;
