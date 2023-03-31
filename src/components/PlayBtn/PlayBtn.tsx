@@ -1,18 +1,18 @@
 import "./PlayBtn.css";
 
 interface PlayBtnProps {
-  play: boolean;
-  setPlay: (play: boolean) => void;
+  isPlaying: boolean;
+  startPlay: Function;
+  stopPlay: Function;
 }
 
-const PlayBtn = ({ play, setPlay }: PlayBtnProps) => {
-  const handleClick = () => {
-    setPlay(!play);
-  };
-
+const PlayBtn = ({ isPlaying, startPlay, stopPlay }: PlayBtnProps) => {
   return (
-    <button className="play-btn" onClick={handleClick}>
-      {play ? (
+    <button
+      className="play-btn"
+      onClick={() => (isPlaying ? stopPlay() : startPlay())}
+    >
+      {isPlaying ? (
         <div className="vertical-lines">
           <div className="line"></div>
           <div className="line"></div>

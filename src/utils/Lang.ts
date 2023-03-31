@@ -1,9 +1,5 @@
-import { useSpeechRecognition } from "../contexts/LangContext";
-
-const { language } = useSpeechRecognition();
-
-export const lang =
-  language === "ka-GE"
+export const lang = (language: string) => {
+  return language === "ka-GE"
     ? {
         copy: "ასლი",
         title: "ტრანსკრიპტი",
@@ -16,3 +12,4 @@ export const lang =
         startInstruction: "Hit play to transcript you're speech",
         recordInstruction: "Speack to record your transcript",
       };
+};

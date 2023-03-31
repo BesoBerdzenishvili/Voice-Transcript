@@ -4,18 +4,27 @@
   border-radius: 50%;
   background-image: linear-gradient(to bottom right, #163bd3, #3c5cfd);
   border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding-left: 2px;
+  margin: 14px 0 20px 0;
 }
 
 .vertical-lines {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .line {
-  width: 4px;
-  height: 20px;
+  width: 6px;
+  height: 26px;
   background-color: #26252a;
+  border-radius: 4px;
+}
+
+.line:first-child {
+  margin-right: 5px;
 }
 
 .triangle {
