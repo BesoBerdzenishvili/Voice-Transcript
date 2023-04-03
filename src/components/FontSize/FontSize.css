@@ -1,7 +1,7 @@
 .container {
   position: relative;
 }
-button {
+.font-size-btn {
   background-color: transparent;
   color: #fff;
   border: 1.5px solid white;
@@ -10,7 +10,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.font-size-btn:hover {
   background-color: #fff;
   color: black;
 }
