@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export const SpeechRecognitionContext = React.createContext<{
   SpeechRecognition: any;
@@ -13,7 +13,15 @@ export const SpeechRecognitionContext = React.createContext<{
 });
 
 export const SpeechRecognitionProvider = ({ children }: { children: any }) => {
-  const [language, setLanguage] = useState("en-US");
+  const [language, setLanguage] = useState(() => {
+    const saved = localStorage.getItem("language");
+    return saved ? JSON.parse(saved) : "en-US";
+  });
+
+  useEffect(() => {
+    localStorage.setItem("language", JSON.stringify(language));
+  }, [language]);
+
   const SpeechRecognition =
     (window as any).SpeechRecognition ||
     (window as any).webkitSpeechRecognition;

@@ -8,7 +8,14 @@ function App() {
   const { recognition, language } = useContext(SpeechRecognitionContext);
   const languageText = lang(language);
   const [isRecording, setIsRecording] = useState(false);
-  const [fontSize, setFontSize] = useState(16);
+  const [fontSize, setFontSize] = useState(() => {
+    const saved = localStorage.getItem("fontSize");
+    return saved ? JSON.parse(saved) : 16;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("fontSize", JSON.stringify(fontSize));
+  }, [fontSize]);
   const [recordedText, setRecordedText] = useState(languageText.instruction);
 
   useEffect(() => {
