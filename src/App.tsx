@@ -3,8 +3,8 @@ import { SpeechRecognitionContext } from "./contexts/LangContext";
 import { lang } from "./utils/Lang";
 import PlayBtn from "./components/PlayBtn/PlayBtn";
 import Header from "./layout/Header/Header";
-import CopyBtn from "./components/Copy/CopyBtn";
-import CopyMessage from "./components/Copy/CopyMessage";
+import CopyBtn from "./components/CopyBtn/CopyBtn";
+import CopyMessage from "./components/CopyBtn/CopyMessage";
 
 function App() {
   const { recognition, language } = useContext(SpeechRecognitionContext);
