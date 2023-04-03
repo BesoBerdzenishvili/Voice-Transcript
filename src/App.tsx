@@ -40,11 +40,9 @@ function App() {
 
   return (
     <>
+      <FontSize size={fontSize} setSize={setFontSize} />
       <h1>{languageText.title}</h1>
-      <div className="controllers">
-        <FontSize size={fontSize} setSize={setFontSize} />
-        <LanguageSwitch />
-      </div>
+      <LanguageSwitch />
       <main>
         <PlayBtn
           startPlay={handleStartRecording}
