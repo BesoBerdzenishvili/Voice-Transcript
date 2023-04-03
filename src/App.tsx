@@ -2,8 +2,7 @@ import { useState, useContext, useEffect } from "react";
 import PlayBtn from "./components/PlayBtn/PlayBtn";
 import { SpeechRecognitionContext } from "./contexts/LangContext";
 import { lang } from "./utils/Lang";
-import LanguageSwitch from "./components/LanguageSwitch/LanguageSwitch";
-import FontSize from "./components/FontSize/FontSize";
+import Header from "./layout/Header/Header";
 
 function App() {
   const { recognition, language } = useContext(SpeechRecognitionContext);
@@ -40,9 +39,11 @@ function App() {
 
   return (
     <>
-      <FontSize size={fontSize} setSize={setFontSize} />
-      <h1>{languageText.title}</h1>
-      <LanguageSwitch />
+      <Header
+        fontSize={fontSize}
+        setFontSize={setFontSize}
+        languageText={languageText}
+      />
       <main>
         <PlayBtn
           startPlay={handleStartRecording}
