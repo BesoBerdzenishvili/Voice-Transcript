@@ -1,0 +1,13 @@
+.copy-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  float: right;
+}
+
+.copy-btn:active {
+  position: relative;
+  left: 2px;
+  top: 4px;
+}

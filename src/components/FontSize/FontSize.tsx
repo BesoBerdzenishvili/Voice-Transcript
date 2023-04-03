@@ -37,7 +37,9 @@ const FontSize: React.FC<FontSizeProps> = ({ size, setSize }) => {
 
   return (
     <div ref={containerRef} className="container">
-      <button onClick={handleButtonClick}>F: {size}</button>
+      <button onClick={handleButtonClick} className="font-size-btn">
+        F: {size}
+      </button>
       {showSlider && (
         <input
           type="range"

@@ -1,13 +1,16 @@
 import { useState, useContext, useEffect } from "react";
-import PlayBtn from "./components/PlayBtn/PlayBtn";
 import { SpeechRecognitionContext } from "./contexts/LangContext";
 import { lang } from "./utils/Lang";
+import PlayBtn from "./components/PlayBtn/PlayBtn";
 import Header from "./layout/Header/Header";
+import CopyBtn from "./components/Copy/CopyBtn";
+import CopyMessage from "./components/Copy/CopyMessage";
 
 function App() {
   const { recognition, language } = useContext(SpeechRecognitionContext);
   const languageText = lang(language);
   const [isRecording, setIsRecording] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
   const [fontSize, setFontSize] = useState(() => {
     const saved = localStorage.getItem("fontSize");
     return saved ? JSON.parse(saved) : 16;
@@ -46,6 +49,7 @@ function App() {
 
   return (
     <>
+      <CopyMessage showMessage={showMessage} />
       <Header
         fontSize={fontSize}
         setFontSize={setFontSize}
@@ -58,7 +62,10 @@ function App() {
           isPlaying={isRecording}
         />
         <div className="transcript-board">
-          <p style={{ fontSize: fontSize }}>{recordedText}</p>
+          <p style={{ fontSize: fontSize }}>
+            <CopyBtn text={recordedText} setShowMessage={setShowMessage} />
+            {recordedText}
+          </p>
         </div>
       </main>
     </>
