@@ -1,4 +1,20 @@
 select {
   cursor: pointer;
-  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #fff;
+  border: 1.5px solid white;
+  border-radius: 8px;
+  padding: 8px;
+}
+select:hover {
+  background-color: #fff;
+  color: black;
+}
+
+select:hover option {
+  color: #fff;
+}
+option {
+  background-color: #26252a;
 }
