@@ -36,7 +36,7 @@ const FontSize: React.FC<FontSizeProps> = ({ size, setSize }) => {
   }, []);
 
   return (
-    <div ref={containerRef}>
+    <div ref={containerRef} className="container">
       <button onClick={handleButtonClick}>F: {size}</button>
       {showSlider && (
         <input
